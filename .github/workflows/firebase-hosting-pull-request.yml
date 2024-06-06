@@ -20,6 +20,6 @@ jobs:
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_MYAPPLICATION_C1475 }}"
-          projectId: myapplication-c1475
+          projectId: flutter-chat-app-8c1c3
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
