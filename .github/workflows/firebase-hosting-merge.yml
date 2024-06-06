@@ -28,3 +28,4 @@ jobs:
           projectId: myapplication-c1475
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
+          FIREBASE_CLI_EXPERIMENTS: webframeworks
