@@ -78,7 +78,8 @@ class IntroTitleDetailsWidget extends StatelessWidget {
                     ),
                   ),
                   const CustomTextWidget(
-                    text: "also an Engineer, Cinematographer, Freelancer too!",
+                    text:
+                        "also an Engineer, Explorer, Open Source Contributer too!",
                     fontSize: smallMedium,
                     fontWeight: FontWeight.w200,
                   ),

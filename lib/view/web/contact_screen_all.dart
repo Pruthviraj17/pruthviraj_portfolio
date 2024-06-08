@@ -33,7 +33,7 @@ class ContactScreenAll extends StatelessWidget {
           ),
           const CustomTextWidget(
             text:
-                "I am actively seeking new opportunities and am open to collaborating on exciting projects. If you are interested in working together or have any inquiries, please feel free to reach out to me.",
+                "I am actively seeking new opportunities also am open to collaborating on exciting projects. If you are interested in working together or have any inquiries, please feel free to reach out to me.",
             fontSize: medium,
           ),
           const SizedBox(
@@ -116,9 +116,7 @@ class ContactScreenAll extends StatelessWidget {
             ],
           ),
 
-          // const SizedBox(
-          //   height: 40,
-          // ),
+        
         ],
       ),
     );
