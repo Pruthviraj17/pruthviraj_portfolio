@@ -12,7 +12,7 @@ class ProjectsScreen extends StatefulWidget {
 class _ProjectsScreenState extends State<ProjectsScreen> {
   @override
   Widget build(BuildContext context) {
-    return   ResponsiveBuilder(builder: (context, sizingInformation) {
+    return ResponsiveBuilder(builder: (context, sizingInformation) {
       if (sizingInformation.deviceScreenType == DeviceScreenType.desktop) {
         return const ProjectScreenWeb();
       }

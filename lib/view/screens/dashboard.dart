@@ -10,12 +10,13 @@ import 'package:my_portfolio/view/screens/highlight_screen.dart';
 import 'package:my_portfolio/view/screens/projects_screen.dart';
 import 'package:my_portfolio/components/app_image_widget.dart';
 import 'package:my_portfolio/components/custom_text_widget.dart';
+import 'package:my_portfolio/view/screens/splash_screen.dart';
 import 'package:my_portfolio/widgets/screen_widgets/drawer_widget.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 class DashBoardScreen extends StatefulWidget {
   const DashBoardScreen({super.key});
-  
+
   @override
   State<DashBoardScreen> createState() => _DashBoardScreenState();
 }
@@ -24,6 +25,7 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
   final ItemScrollController _scrollController = ItemScrollController();
   DashBoardController dashBoardController = Get.put(DashBoardController());
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+  bool splashScreen = true;
 
   void scrollToIndex(int index) {
     dashBoardController.updateIndex(value: index);
@@ -38,6 +40,23 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
   void dispose() {
     super.dispose();
     dashBoardController.dispose();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    disableSplashScreen();
+  }
+
+  void disableSplashScreen() {
+    Future.delayed(
+      const Duration(seconds: 3),
+      () {
+        setState(() {
+          splashScreen = false;
+        });
+      },
+    );
   }
 
   void openSideMenuDrawer() {
@@ -153,47 +172,49 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
               backgroundColor: appBarColor,
             )
           : null,
-      body: Stack(
-        children: [
-          ScrollablePositionedList.builder(
-            itemScrollController: _scrollController,
-            padding: EdgeInsets.symmetric(
-              horizontal: size.width * 0.03,
-              vertical: size.height * 0.07,
-            ),
-            itemCount: 4,
-            itemBuilder: (context, index) {
-              switch (index) {
-                case 0:
-                  return const AboutScreen();
-                case 1:
-                  return const HighlightScreen();
-                case 2:
-                  return const ProjectsScreen();
-                case 3:
-                  return const ContactScreen();
-                default:
-                  return const SizedBox();
-              }
-            },
-          ),
-          if (size.width < 950)
-            Positioned(
-              top: 50,
-              left: 10,
-              child: IconButton(
-                onPressed: () {
-                  openSideMenuDrawer();
-                },
-                icon: const Icon(
-                  Icons.menu_rounded,
-                  size: 30,
-                  color: white,
+      body: splashScreen
+          ? const SplashScreen()
+          : Stack(
+              children: [
+                ScrollablePositionedList.builder(
+                  itemScrollController: _scrollController,
+                  padding: EdgeInsets.symmetric(
+                    horizontal: size.width * 0.03,
+                    vertical: size.height * 0.07,
+                  ),
+                  itemCount: 4,
+                  itemBuilder: (context, index) {
+                    switch (index) {
+                      case 0:
+                        return const AboutScreen();
+                      case 1:
+                        return const HighlightScreen();
+                      case 2:
+                        return const ProjectsScreen();
+                      case 3:
+                        return const ContactScreen();
+                      default:
+                        return const SizedBox();
+                    }
+                  },
                 ),
-              ),
+                if (size.width < 950)
+                  Positioned(
+                    top: 50,
+                    left: 10,
+                    child: IconButton(
+                      onPressed: () {
+                        openSideMenuDrawer();
+                      },
+                      icon: const Icon(
+                        Icons.menu_rounded,
+                        size: 30,
+                        color: white,
+                      ),
+                    ),
+                  ),
+              ],
             ),
-        ],
-      ),
     );
   }
 }

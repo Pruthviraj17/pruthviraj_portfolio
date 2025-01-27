@@ -118,8 +118,7 @@ class IntroTitleDetailsWidget extends StatelessWidget {
               ),
             const Flexible(
               child: CustomTextWidget(
-                text:
-                    "Currently, Working as Flutter Intern at Liveasy Logistics",
+                text: "Currently, working at TCS.",
                 fontSize: medium,
                 fontWeight: FontWeight.w200,
               ),

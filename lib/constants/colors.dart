@@ -5,6 +5,7 @@ const appBarColor = Color(0xff1A0B2E);
 const purple = Color(0xff7127BA);
 const white = Color(0xffFFFFFF);
 const blue = Color(0xff1877F2);
+const yellow = Color.fromARGB(172, 209, 195, 66);
 const bgCircleAvatar = Color(0xff251C31);
 const projectTitleColor = Color(0xffCCD6F6);
 const radialPurpleColor = Color(0xff693B93);

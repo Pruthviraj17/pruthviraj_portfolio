@@ -13,7 +13,6 @@ class HighlightsCards extends StatelessWidget {
       runSpacing: 20,
       spacing: 20,
       direction: cardDisplayDirection ?? Axis.horizontal,
-      
       children: [
         CustomCardWidget(
           imagePath: AppImages.starIcon,
@@ -24,9 +23,9 @@ class HighlightsCards extends StatelessWidget {
         ),
         CustomCardWidget(
           imagePath: AppImages.cupIcon,
-          title: "Intern at @Liveasy",
+          title: "Ex-Intern at @Liveasy",
           desc:
-              "Currently working as a Flutter Developer at Liveasy, focusing on developing and maintaining mobile and web applications.",
+              "As an Software Developer at Liveasy, I contributed developing and maintaining mobile and web applications.",
           cardWidth: cardWidth,
         ),
         CustomCardWidget(
